@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  backendgeneral:
+    image: backendgeneral:latest
+    build:
+      context: "D:/Septimo Ciclo/Proyecto Arquitectura de Software/RENEWOOD-main"  # Ajusta esta ruta
+    ports:
+      - "8081:8081"
+    networks:
+      - mi_red
+
+  gestionformulario:
+    image: gestionformulario:latest
+    build:
+      context: "D:/Septimo Ciclo/Proyecto Arquitectura de Software/GESTIONFORMULARIO-main"  # Ajusta esta ruta
+    ports:
+      - "8080:8080"
+    networks:
+      - mi_red
+
+networks:
+  mi_red:
+    driver: bridge

@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+  gestionformulario:
+    image: gestionformulario:latest
+    build:
+      context: ./  # Ajusta esta ruta si tu microservicio está en un subdirectorio
+    ports:
+      - "8080:8080"
+    networks:
+      - mi_red
+
+networks:
+  mi_red:
+    driver: bridge
